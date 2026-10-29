@@ -1,69 +1,288 @@
 
-<section class="hero">
-  <div class="profile-circle">RS</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rana Shahzaib | Software Developer</title>
+  <meta name="description" content="Rana Shahzaib's personal software developer portfolio.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <h1>Rana Shahzaib</h1>
+    html { scroll-behavior: smooth; }
 
-  <h2>Software Developer</h2>
+    body {
+      font-family: Arial, sans-serif;
+      background: #080d1a;
+      color: #f8fafc;
+    }
 
-  <p>
-    Software Engineering Student passionate about
-    web development, programming, and technology.
-  </p>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid #1e293b;
+    }
 
-  <a href="#skills" class="hero-btn">Explore My Skills</a>
-</section>
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #60a5fa;
+    }
 
-<style>
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  color: white;
-  background: linear-gradient(135deg, #0f172a, #1d4ed8);
-  font-family: Arial, sans-serif;
-}
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
 
-.profile-circle {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 22px;
-  border: 2px solid #60a5fa;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  font-weight: bold;
-  background: #172554;
-}
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 8%;
+      background:
+        radial-gradient(ellipse at 80% 40%, #172554 0%, transparent 55%);
+    }
 
-.hero h1 {
-  font-size: clamp(32px, 6vw, 52px);
-  margin: 10px 0;
-}
+    .hero-content {
+      max-width: 850px;
+      text-align: center;
+      animation: appear 1s ease both;
+    }
 
-.hero h2 {
-  color: #93c5fd;
-  font-size: 23px;
-}
+    .badge {
+      display: inline-block;
+      color: #93c5fd;
+      border: 1px solid #1d4ed8;
+      background: #111c38;
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
 
-.hero p {
-  max-width: 550px;
-  margin: 20px auto 28px;
-  line-height: 1.8;
-  color: #dbeafe;
-}
+    h1 {
+      font-size: clamp(40px, 8vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
 
-.hero-btn {
-  display: inline-block;
-  padding: 13px 24px;
-  border-radius: 8px;
-  background: #3b82f6;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+    h1 span {
+      color: #60a5fa;
+    }
 
-.hero-btn:hover {
-  background: #2563eb;
-}
-</style>
+    h2 {
+      font-size: clamp(21px, 4vw, 30px);
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    h2 span { color: #60a5fa; }
+
+    .intro {
+      max-width: 590px;
+      margin: 0 auto;
+      color: #94a3b8;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 9px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    .primary {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #475569;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px #2563eb35;
+    }
+
+    .skills {
+      padding: 65px 8%;
+      text-align: center;
+      background: #0c1324;
+    }
+
+    .skills h2 {
+      font-size: 32px;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .skills > p {
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    .skill-grid {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 25px 10px;
+      border: 1px solid #26344c;
+      background: #111c30;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      border-color: #60a5fa;
+    }
+
+    .skill .icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .skill h3 {
+      font-size: 15px;
+      color: #bfdbfe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+      font-size: 13px;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 20px 5%; }
+      nav a { margin-left: 10px; font-size: 12px; }
+      .hero { min-height: 75vh; padding: 55px 6%; }
+      h1 { letter-spacing: -1px; }
+      .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">RS.</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="badge">✦ Welcome to my portfolio</div>
+
+        <h1>Hi, I'm <span>Rana Shahzaib</span></h1>
+
+        <h2>I'm a <span id="typing">Software Developer</span></h2>
+
+        <p class="intro">
+          A Software Engineering Student passionate about
+          technology, programming, and creating beautiful
+          digital experiences. Welcome to my personal portfolio!
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#skills">View My Projects ↗</a>
+          <a class="btn secondary" href="mailto:YOUR_EMAIL@example.com">
+            Contact Me ✉
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <h2>My Skills</h2>
+      <p>Technologies I am learning and exploring.</p>
+
+      <div class="skill-grid">
+        <div class="skill">
+          <div class="icon">🌐</div>
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill">
+          <div class="icon">🎨</div>
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill">
+          <div class="icon">⚡</div>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill">
+          <div class="icon">💻</div>
+          <h3>Git & GitHub</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Rana Shahzaib | Software Developer
+  </footer>
+
+  <script>
+    const words = [
+      "Software Developer",
+      "Web Developer",
+      "Future Software Engineer"
+    ];
+
+    let index = 0;
+    const typing = document.getElementById("typing");
+
+    setInterval(() => {
+      typing.style.opacity = 0;
+
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        typing.textContent = words[index];
+        typing.style.opacity = 1;
+      }, 250);
+    }, 2200);
+
+    typing.style.transition = "opacity 0.25s ease";
+  </script>
+
+</body>
+</html>
